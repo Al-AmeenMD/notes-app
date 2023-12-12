@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import { IoIosArrowBack } from "react-icons/io";
+import { HiArrowSmallLeft } from "react-icons/hi2";
+import { FaSave } from "react-icons/fa";
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
@@ -28,8 +29,8 @@ const CreateNote = ({setNotes}) => {
   return (
     <section>
       <header className="create-note__header">
-        <Link to="/"><IoIosArrowBack /></Link>
-        <button className="btn lg primary" onClick={handleSubmit}>Save</button>
+        <Link to="/"><button className="btn lg primary"><HiArrowSmallLeft/></button></Link>
+        <button className="btn lg primary" onClick={handleSubmit}><FaSave /></button>
       </header>
 
       <form className="create-note__form" onSubmit={handleSubmit}>

@@ -1,8 +1,9 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import {IoIosArrowBack} from "react-icons/io";
-import {RiDeleteBin6Line} from "react-icons/ri"
+import { HiArrowSmallLeft } from "react-icons/hi2";
+import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 import useCreateDate from "../components/useCreateDate";
+import { FaSave } from "react-icons/fa";
 
 const EditNote = ({notes, setNotes}) => {
   const {id} = useParams();
@@ -44,14 +45,13 @@ const EditNote = ({notes, setNotes}) => {
   return (
     <section>
       <header className="create-note__header">
-        <Link to="/"><IoIosArrowBack/></Link>
-        <button className="btn danger" onClick={handleDelete}><RiDeleteBin6Line/></button>
-        <button className="btn lg primary" onClick={handleSubmit}>Save</button>
+        <Link to="/"><button className="btn lg primary"><HiArrowSmallLeft/></button></Link>
+        <button className="btn danger" onClick={handleDelete}><MdDelete/></button>
+        <button className="btn lg primary" onClick={handleSubmit}><FaSave /></button>
       </header>
 
       <form className="create-note__form" onSubmit={handleSubmit}>
         <input type="text" autoFocus placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
-        
         <textarea rows="50" value={details} onChange={(e) => setDetails(e.target.value)} placeholder="Note details..."></textarea>
       </form>
     </section>
